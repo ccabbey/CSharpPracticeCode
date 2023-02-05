@@ -1,4 +1,4 @@
-﻿using CardLib;
+﻿using Ch11CardLib;
 
 namespace CardClient;
 

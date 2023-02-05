@@ -1,6 +1,6 @@
 
 using System;
-namespace CardLib;
+namespace Ch11CardLib;
 
 public class Deck
 {
