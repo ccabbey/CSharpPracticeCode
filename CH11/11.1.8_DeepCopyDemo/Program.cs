@@ -7,7 +7,7 @@ namespace Ch11DeepCopyDemo
         static void Main(string[] args)
         {
             Cloner mySource = new(5);
-            Cloner myTarget = (Cloner)mySource.GetCopy();
+            Cloner myTarget = (Cloner)mySource.Clone();
             WriteLine($"myTarget.MyContent.Val = {myTarget.MyContent.Val}");
             mySource.MyContent.Val = 2;
             WriteLine($"myTarget.MyContent.Val = {myTarget.MyContent.Val}");
