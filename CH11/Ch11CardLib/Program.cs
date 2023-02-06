@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 namespace Ch11CardLib
 {
     class Program
@@ -15,6 +16,19 @@ namespace Ch11CardLib
             }
 
             Console.ReadKey();
+
+            //deep copy test
+            Deck deck1 = new Deck();
+            Deck deck2 = (Deck)deck1.Clone();
+            WriteLine($"The first card in the original deck is: {deck1.GetCard(0)}");
+            WriteLine($"The first card in the cloned deck is: {deck2.GetCard(0)} ");
+            deck1.Shuffle();
+            WriteLine("Original deck shuffled.");
+            WriteLine($"The first card in the o original deck 1s: {deck1.GetCard(0)} ");
+            WriteLine($"The first card in the cloned deck is: {deck2.GetCard(0)}");
+            ReadKey();
+
+
         }
     }
 }

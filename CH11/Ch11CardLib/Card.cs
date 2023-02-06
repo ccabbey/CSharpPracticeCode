@@ -1,6 +1,6 @@
 namespace Ch11CardLib;
 
-public class Card
+public class Card : ICloneable
 {
     public readonly Suit Suit;
     public readonly Rank Rank;
@@ -10,6 +10,12 @@ public class Card
         Rank = newRank;
     }
     private Card() { }
+
+    public object Clone()
+    {
+        return MemberwiseClone();
+    }
+
     public override string ToString() => "The " + Rank + " of " + Suit + "s";
 
 }

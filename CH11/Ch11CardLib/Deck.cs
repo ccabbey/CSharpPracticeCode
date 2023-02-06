@@ -2,7 +2,7 @@
 using System;
 namespace Ch11CardLib
 {
-    public class Deck
+    public class Deck : ICloneable
     {
         private Cards cards = new Cards();
         public Deck()
@@ -98,6 +98,13 @@ namespace Ch11CardLib
 
         }
 
+        public object Clone()
+        {
+            Deck newDeck = new Deck((Cards)cards.Clone());
+            return newDeck;
+        }
+
+        private Deck(Cards newCards) => cards = newCards;
     }
 }
 
