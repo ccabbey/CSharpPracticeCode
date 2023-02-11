@@ -59,6 +59,16 @@ namespace Ch11Ex04
             WriteLine("Analyzing boxed MyStruct type variable:");
             checker.Check(try6);
             ReadKey();
+
+            object[] data = {
+                try1,try2,try3,try4,try5,try6};
+            foreach (var item in data)
+            {
+                // if (item is var catcher)
+                //     WriteLine("item is " + $"{catcher.GetType().ToString()}");
+                WriteLine("item is " + $"{item.GetType().ToString()}");
+            }
+            ReadKey();
         }
     }
 
