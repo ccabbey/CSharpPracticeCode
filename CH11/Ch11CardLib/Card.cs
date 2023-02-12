@@ -1,6 +1,6 @@
 namespace Ch11CardLib;
 
-public class Card : ICloneable
+public partial class Card : ICloneable
 {
     public readonly Suit Suit;
     public readonly Rank Rank;
@@ -18,4 +18,14 @@ public class Card : ICloneable
 
     public override string ToString() => "The " + Rank + " of " + Suit + "s";
 
+}
+
+
+public partial class Card
+{
+    public static bool useTrumps = false;
+
+    public static Suit trumpSuit = Suit.Club;
+
+    public static bool isAceHigh = true;
 }
