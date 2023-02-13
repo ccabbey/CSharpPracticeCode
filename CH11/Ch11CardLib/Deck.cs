@@ -15,6 +15,24 @@ namespace Ch11CardLib
                 }
             }
         }
+        public Deck(bool isAceHigh) : this()
+        {
+            Card.isAceHigh = isAceHigh;
+        }
+
+        public Deck(bool useTrupms, Suit trump) : this()
+        {
+            Card.useTrumps = useTrupms;
+            Card.trump = trump;
+        }
+
+        public Deck(bool isAceHigh, bool useTrupms, Suit trump) : this()
+        {
+            Card.isAceHigh = isAceHigh;
+            Card.useTrumps = useTrupms;
+            Card.trump = trump;
+
+        }
 
         public Cards GetRandomCards(int num)
         {
