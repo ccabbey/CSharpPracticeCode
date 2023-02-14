@@ -67,7 +67,34 @@ public partial class Card
 
     public static bool operator >=(Card card1, Card card2)
     {
-        //TODO
+        if (card1.Suit == card2.Suit)
+        {
+            if (isAceHigh)
+            {
+                if (card1.Rank == Rank.Ace)
+                {
+                    return true;
+                }
+                else
+                {
+                    if (card2.Rank == Rank.Ace)
+                        return false;
+                    else
+                        return (card1.Rank >= card2.Rank);
+                }
+            }
+            else
+            {
+                return (card1.Rank >= card2.Rank);
+            }
+        }
+        else
+        {
+            if (useTrumps && card2.Suit == Card.trump)
+                return false;
+            else
+                return true;
+        }
     }
 
     public static bool operator <(Card card1, Card card2)
@@ -75,7 +102,14 @@ public partial class Card
         return !(card1 >= card2);
     }
 
+    public static bool operator <=(Card card1, Card card2)
+    {
+        return !(card1 > card2);
+    }
 
 }
+
+
+
 
 #endregion
