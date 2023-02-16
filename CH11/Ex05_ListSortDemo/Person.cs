@@ -13,7 +13,15 @@ namespace Ch11Ex05
 
         public int CompareTo(object? obj)
         {
-            throw new NotImplementedException();
+            if (obj is Person)
+            {
+                Person otherPerson = (Person)obj;
+                return this.Age - otherPerson.Age;
+            }
+            else
+            {
+                throw new ArgumentException("object to compare is not a Person object.");
+            }
         }
     }
 }
